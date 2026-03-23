@@ -11,6 +11,19 @@ class Post(BaseModel):
     content: str
     published:bool = True
     rating: Optional[int] = None
+    
+post = [
+    {
+    "title": "First Post",
+    "content": "This is the first content",
+    "id" : 1
+    },
+    {
+    "title": "Second Post",
+    "content": "This is the Second content",
+    "id" : 2
+    }
+    ]
 
 @app.get("/")
 async def root():
@@ -19,7 +32,7 @@ async def root():
 
 @app.get("/posts")
 async def get_posts():
-    return {"data":"These are the posts"}
+    return {"data":post}
 
 @app.post("/posts")
 async def create_posts(post : Post):
