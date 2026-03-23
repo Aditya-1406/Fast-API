@@ -26,3 +26,9 @@ async def create_posts(post : Post):
     print(post)
     print(post.dict())
     return {'message' : 'Post created'}
+
+@app.post("/posts")
+async def create_posts(post : Post):
+    print(post)
+    print(post.dict())
+    return {'message' : 'Post created'}
